@@ -1,7 +1,7 @@
 body{
 	background-image: url("bg.jpg");
-	background-repeat: repeat;
-	align-content: center:;
+	background-repeat: repeat-y;
+	align-content: center;
 	text-align: center;
 	
 
@@ -15,11 +15,19 @@ body{
 
 
 #home{
-	color: pink;
-	text-align: center;
+	color: hotpink;
+	border: 10px solid transparent;
+    padding: 15px;
+    -webkit-border-image: url(border.png) 30 stretch; /* Safari 3.1-5 */
+    -o-border-image: url(border.png) 30 stretch; /* Opera 11-12.1 */
+    border-image: url(border.png) 30 stretch;
 }
 
+#homeimage{
+	padding:3px;
+    border:10px solid #021a40;
 
+}
 
 .container-fluid {
     width: 1000px;
@@ -36,6 +44,25 @@ body{
 	align-content: center;
 }
 
-a{
-	color:pink;
+a {
+    color: hotpink;
 }
+a:link {
+    color: pink;
+}
+
+/* visited link */
+a:visited {
+    color: hotpink;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: pink;
+}
+
