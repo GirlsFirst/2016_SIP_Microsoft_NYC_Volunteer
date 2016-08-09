@@ -32,7 +32,7 @@ function goBack() {
 		<body>
 <h1 id="home">Find Places to Volunteer</h1>
 <center>
-<img src="han.png" height="50%" height="50%">
+<img src="head2.png" height="60%">
 	<!--Navigation bar-->
 <center>	
 <nav class="navbar">
@@ -57,22 +57,28 @@ function goBack() {
 
 <!--PUT TEXT HERE-->
 
-<h3>My Google Maps</h3>
-    <div id="map"></div>
+<div id="map"></div>
 
-    <script async defer
-       src="https://maps.googleapis.com/maps/api/js?&callback=initMap">
-     </script>  
+    <div id="places"></div>
+
+    
 
      
     <script>
+    var volunteerplaces;
+    $.getJSON('volunteerdata.json', function(data){
+        volunteerplaces = data;
+
+    })
+
+
       function initMap(){
-           var mylatlng = {lat:40.771, lng:-73.974};
+           var mylatlng = {lat:40.7481, lng:-73.9938};
            var ling ={lat:40.748121, lng:-73.993884};
            var lang ={lat:40.750168, lng:-73.976483};
            var le={lat: 40.764404, lng: -73.993623};
            var lot={lat:40.706339 , lng:-74.013410 };
-           var lqt={lat:40.712784 , lng:-74.005941};
+           
           
         var mapDiv = document.getElementById('map');
             var map = new google.maps.Map(mapDiv,{
@@ -80,37 +86,104 @@ function goBack() {
               zoom: 8
 
         });
-       
-       
-              var marker1 = new google.maps.Marker({
+
+            var contentString = 'New York Cares </br> 214 W. 29th St. </br> New York, NY 10001 </br> (212)-228-5000 </br> <a href="http://www.nycares.org">nycares.org</a>'
+
+
+            var contentString2 = 'Citymeals on Wheels </br> 355 Lexington Ave. </br> New York, NY 10017 </br> (212)-687-1234 </br> <a href="http://www.citymeals.org">citymeals.org</a>'
+
+            var contentString3 = 'The American Red Cross </br> 520 W. 49th St. </br> New York, NY </br> (877)-REDCROSS </br> <a href="http://www.nyredcross.org">nyredcross.org</a>'    
+                        
+            var contentString4 ='Food Bank for New York City </br> 39 Broadway </br> New York, NY 10006 </br> (212) 566-7855 </br> <a href="http://www.foodbanknyc.org">foodbanknyc.org</a>' 
+
+
+   
+
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
+
+            var infowindow2 = new google.maps.InfoWindow({
+              content: contentString2
+            });
+
+            var infowindow3 = new google.maps.InfoWindow({
+              content: contentString3
+            });
+
+            var infowindow4 = new google.maps.InfoWindow({
+              content: contentString4
+            }); 
+
+
+              var image ="leaf.png";
+              var image2 ="food.png";
+              var image3 ="health2.png";
+
+              var marker = new google.maps.Marker({
               position: ling,
               map: map,
-              title: 'New York Cares'
+              title: 'New York Cares',
+              icon: image
+              
             });
+
+
+
               var marker2 = new google.maps.Marker({
               position: lang,
               map: map,
-              title: 'Citymeals on Wheels'
+              title: 'Citymeals on Wheels',
+              icon: image2
             });
+
+
               var marker3 = new google.maps.Marker({
               position: le,
               map: map,
-              title: 'The American Red Cross'
+              title: 'The American Red Cross',
+              icon: image3
+
             });
+
+
             var marker4 = new google.maps.Marker({
               position: lot,
               map: map,
-              title: 'Food Bank for New York City'
-            });
-            var marker5 = new google.maps.Marker({
-              position: lqt,
-              map: map,
-              title: 'Office Intern-myFace'
+              title: 'Food Bank for New York City',
+              icon: image2
             });
            
+
+           
+            marker.addListener('click', function() {
+              infowindow.open(map, marker);
+            });         
+
+            marker2.addListener('click', function() {
+              infowindow2.open(map, marker2);
+            });     
+
+            marker3.addListener('click', function() {
+              infowindow3.open(map, marker3);
+            });
+
+            marker4.addListener('click', function() {
+              infowindow4.open(map, marker4);
+            });  
+
       }
 
+    
+
+
+
+
     </script>
+
+    <script async defer
+       src="https://maps.googleapis.com/maps/api/js?&callback=initMap">
+     </script>  
   
 <!--End of the text-->
 <div class="body">

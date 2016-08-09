@@ -19,6 +19,13 @@ function goBack() {
     window.history.back();
 }
 </script>
+<style>
+.carousel {
+	width:1130px;
+    height:360px;
+}
+	
+</style>
 
 <script src="final.js"></script>
 <title>Volunteen - Description</title>
@@ -27,7 +34,7 @@ function goBack() {
 		<body>
 <h1 id="home">Description</h1>
 <center>
-<img src="han.png" height="50%" height="50%">
+<img src="head2.png" height="60%">
 	<!--Navigation bar-->
 <center>	
 <nav class="navbar">
@@ -50,62 +57,313 @@ function goBack() {
 <!--end of bar-->
 <div class="body">
 <!--PUT TEXT HERE-->
-	<body>
 		<h1>New York Cares</h1>
-			<p id="first"> 
-				New York Cares was founded in 1987 to bring social changes across the city. The small group that started it now has 63,000 volunteerers. One of its latest social change projects requires people from all age groups to clean parks, plant trees, and renovate dirty areas of the city.
+			<div class="container">
+		<div class="row">
+  			<div class="col-md-6 col-md-offset-3">
+			<h1>New York Cares</h1>
+			</div>
+		</div>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+    				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    				<li data-target="#myCarousel" data-slide-to="1"></li>
+    				<li data-target="#myCarousel" data-slide-to="2"></li>
+ 				</ol>
+ 				<div class="carousel-inner" role="listbox">
+    				<div class="item active">
+     					<img src="n1.jpg" alt="Working at Local Parks" style="width:1130px;height:360px;">
+     					<div class="carousel-caption">
+     					<h3>Volunteerers</h3>
+     					<p>Working at Local Parks</p>
+     				</div>
+   				 </div>
 
-				WHEN:  Mon to Fri 9 a.m. to 5 p.m.
-				WHERE: 214 W. 29th St. New York, NY 10001
-				CONTACT: (212) 228-5000
-				For more information, check out New York Cares's website: 
-				<a href="https://www.newyorkcares.org" target="_blank"/>HERE!</a>
-			</p>
-		<h2>The American Red Cross</h2>
-			<p id="next">
-				The American Red Cross is a national organization that gives natural disaster assistance, emergency aid, and works to educate people in various subjects across the US.
-				It gives various oppurtunities to teens where they can help out or give service to administrative services, blood drives, fundraising events, disaster services, the armed forces and much more.
+    			<div class="item">
+						<img src="n2.jpg" alt="Citi Bank and New York Cares" style="width:1130px;height:360px;">
+						<div class="carousel-caption">
+							<h3>Citi Bank Sponsered</h3>
+							<p>Citi Bank and New York Cares Collaboration</p>
+						</div>
+    			</div>
 
-				WHEN: Depends on program
-				WHERE: 520 W. 49th St. New York, NY
-				CONTACT: 877-REDCROSS
-				For more information, check out the American Red Cross's website: 
-				<a href="http://www.nyredcross.org/" target="_blank"/>HERE!</a>
-			</p>
+    			<div class="item">
+      					<img src="n3.jpg" alt="Murals" style="width:1130px;height:360px;">
+      					<div class="carousel-caption">
+      						<h3>Murals</h3>
+      						<p>Teens painting murals across gym wall</p>
+      					</div>
+    			</div>
+  			</div>
+  			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    			<span class="sr-only">Previous</span>
+  			</a>
+  			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    			<span class="sr-only">Next</span>
+  			</a>
+		</div>
+			<div class="row">
+  				<div class="col-md-6 col-md-offset-3">
+				<p id="first"> 
+					New York Cares was founded in 1987 to bring social changes across the city. The small group that started it now has 63,000 volunteerers. One of its latest social change projects requires people from all age groups to clean parks, plant trees, and renovate dirty areas of the city.
+				</p>
+				<p id="numberone">
+					<ul class="additional-info">
+  						<li class="addtional-info-item">WHEN:  Mon to Fri 9 a.m. to 5 p.m.</li>
+  						<li class="addtional-info-item">WHERE: 214 W. 29th St. New York, NY 10001</li>
+ 						<li class="addtional-info-item">CONTACT: (212) 228-5000</li>
+					</ul>
+					For more information, check out New York Cares's website: 
+					<a href="https://www.newyorkcares.org" target="_blank"/>HERE!</a>
+				</p>
+				</div>
+			</div>
+			<div class="row">
+  				<div class="col-md-6 col-md-offset-3">
+			<h1>The American Red Cross</h1>
+				</div>
+			</div>
+			<div id="Carousel" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+    				<li data-target="#Carousel" data-slide-to="0" class="active"></li>
+    				<li data-target="#Carousel" data-slide-to="1"></li>
+    				<li data-target="#Carousel" data-slide-to="2"></li>
+ 				</ol>
+ 				<div class="carousel-inner" role="listbox">
+    				<div class="item active">
+     					<img src="f1.jpg" alt="Relief" style="width:1130px;height:360px;">
+     					<div class="carousel-caption">
+     					<h3>Relief</h3>
+     					<p>Volunteerer hugging a child</p>
+     				</div>
+   				 </div>
 
-		<h3>Citymeals On Wheels</h3>
-			<p id="third">
-				Citymeals On Wheels is a nonprofit organization that provides the elderly in New York City with food. It has 31 meal centers across the city and last year they provided food to about 18, 000 senior citizens. Teens can volunteer at this organization by delivering meals or engaging in recreational activities with the elderly. 
+    			<div class="item">
+						<img src="f2.jpg" alt="Aid" style="width:1130px;height:360px;">
+						<div class="carousel-caption">
+							<h3>Aid</h3>
+							<p>Bringing aid to a disaster struck place</p>
+						</div>
+    			</div>
 
-				WHEN: Daily 9 a.m. to 12 p.m
-				WHERE: 355 Lexington Ave. New York, NY 10017
-				CONTACT: (212) 687-1234
-				For more information, check out City on Wheels's  website: 
-				<a href="http://www.citymeals.org/" target="_blank"/>HERE!</a>
-			</p>
+    			<div class="item">
+      					<img src="f3.jpg" alt="Service" style="width:1130px;height:360px;">
+      					<div class="carousel-caption">
+      						<h3>Service</h3>
+      						<p>Giving service to the military</p>
+      					</div>
+    			</div>
+  			</div>
+  			<a class="left carousel-control" href="#Carousel" role="button" data-slide="prev">
+    			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    			<span class="sr-only">Previous</span>
+  			</a>
+  			<a class="right carousel-control" href="#Carousel" role="button" data-slide="next">
+    			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    			<span class="sr-only">Next</span>
+  			</a>
+		</div>
+			<div class="row">
+  				<div class="col-md-6 col-md-offset-3">
+				<p id="next">
+					The American Red Cross is a national organization that gives natural disaster assistance, emergency aid, and works to educate people in various subjects across the US.It gives various oppurtunities to teens where they can help out or give service to administrative services, blood drives, fundraising events, disaster services, the armed forces and much more.
+				</p>
+				<p id="numbertwo">
+					<ul class="additional-info">
+  						<li class="addtional-info-item">WHEN: Depends on program</li>
+  						<li class="addtional-info-item">WHERE: 520 W. 49th St. New York, NY</li>
+ 						<li class="addtional-info-item">CONTACT: 877-REDCROSS</li>
+					</ul>
+					For more information, check out the American Red Cross's website: 
+					<a href="http://www.nyredcross.org/" target="_blank"/>HERE!</a>
+				</p>
+				</div>
+			</div>
+			<div class="row">
+  				<div class="col-md-6 col-md-offset-3">
+			<h1>Citymeals On Wheels</h1>
+				</div>
+			</div>
+			<div id="hiCarousel" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+    				<li data-target="#hiCarousel" data-slide-to="0" class="active"></li>
+    				<li data-target="#hiCarousel" data-slide-to="1"></li>
+    				<li data-target="#hiCarousel" data-slide-to="2"></li>
+ 				</ol>
+ 				<div class="carousel-inner" role="listbox">
+    				<div class="item active">
+     					<img src="s1.jpg" alt="Food" style="width:1130px;height:360px;">
+     					<div class="carousel-caption">
+     					<h3>Food</h3>
+     					<p>Preparing food for the elderly</p>
+     				</div>
+   				 </div>
 
-		<h4>Food Bank for New York City</h4>
-			<p>
-				The Food Bank for New York City is a nonprofit organization that works to provide the poor New York City residence with food and drinks. Over the years, it has received numerous awards and got national recognition when it was listed under "200 Largest U.S. Charities for 2011" in the Forbes magazine. Teens can easily volunteer in the organization's Warehouse Repack Program, the kitchen, and the food storage section.
+    			<div class="item">
+						<img src="s2.jpg" alt="Senior Citizen" style="width:1130px;height:360px;">
+						<div class="carousel-caption">
+							<h3>Senior Citizen</h3>
+							<p>An old women who receives food from Citymeals On Wheels</p>
+						</div>
+    			</div>
 
-				WHEN: 
-				WHERE: 39 Broadway New York, NY 10006
-				CONTACT: (212) 566-7855
-				For more information, check out Food Bank for New York City's website: 
-				<a href="http://www.foodbanknyc.org/" target="_blank"/>HERE!</a>
-			</p>
-		<h5>Office Intern</h5>
-			<p>
-				myFace is an organization that reforms the faces of people born with facial deconformity.
-				WHEN: Mon Aug 15, 2016 10:00 AM to Thu Dec 15, 2016 02:00 PM
-				WHERE: 333 E. 30th St., Lobby Office New York, NY10016
-				CONTACT: 
-				For more information, check out Food Bank for myFace's website: 
-				<a href="https://www.myface.org/" target="_blank"/>HERE!</a>
-			</p>
-	</body>
+    			<div class="item">
+      					<img src="s3.jpg" alt="Leaders" style="width:1130px;height:360px;">
+      					<div class="carousel-caption">
+      						<h3>Leaders</h3>
+      						<p>The leaders of Citymeals On Wheels</p>
+      					</div>
+    			</div>
+  			</div>
+  			<a class="left carousel-control" href="#hiCarousel" role="button" data-slide="prev">
+    			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    			<span class="sr-only">Previous</span>
+  			</a>
+  			<a class="right carousel-control" href="#hiCarousel" role="button" data-slide="next">
+    			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    			<span class="sr-only">Next</span>
+  			</a>
+		</div>
+			<div class="row">
+  				<div class="col-md-6 col-md-offset-3">
+				<p id="third">
+					Citymeals On Wheels is a nonprofit organization that provides the elderly in New York City with food. It has 31 meal centers across the city and last year they provided food to about 18, 000 senior citizens. Teens can volunteer at this organization by delivering meals or engaging in recreational activities with the elderly. 
+				</p>
+				<p id="numberthree">
+					<ul class="additional-info">
+  						<li class="addtional-info-item">WHEN: Daily 9 a.m. to 12 p.m</li>
+  						<li class="addtional-info-item">WHERE: 355 Lexington Ave. New York, NY 10017</li>
+ 						<li class="addtional-info-item">CONTACT: (212) 687-1234</li>
+					</ul>
+					For more information, check out City on Wheels's  website: 
+					<a href="http://www.citymeals.org/" target="_blank"/>HERE!</a>
+				</p>
+				</div>
+			</div>
+			<div class="row">
+  				<div class="col-md-6 col-md-offset-3">
+			<h1>Food Bank for New York City</h1>
+				</div>
+			</div>
+			<div id="myCarou" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+    				<li data-target="#myCarou" data-slide-to="0" class="active"></li>
+    				<li data-target="#myCarou" data-slide-to="1"></li>
+    				<li data-target="#myCarou" data-slide-to="2"></li>
+ 				</ol>
+ 				<div class="carousel-inner" role="listbox">
+    				<div class="item active">
+     					<img src="e1.jpg" alt="Kitchen" style="width:1130px;height:360px;">
+     					<div class="carousel-caption">
+     					<h3>The Kitchen</h3>
+     					<p>Preparing the food</p>
+     				</div>
+   				 </div>
 
+    			<div class="item">
+						<img src="e2.jpg" alt="Mercedes" style="width:1130px;height:360px;">
+						<div class="carousel-caption">
+							<h3>NYC Food Bank and Mercedes-Benz</h3>
+							<p>Fity-Thousand dollars donated to NYC Food Bank by Mercedes-Benz</p>
+						</div>
+    			</div>
 
+    			<div class="item">
+      					<img src="e3.jpg" alt="Lunch" style="width:1130px;height:360px;">
+      					<div class="carousel-caption">
+      						<h3>Lunch Time!</h3>
+      						<p>The food donated by Food Bank is being consumed by the less-needy</p>
+      					</div>
+    			</div>
+  			</div>
+  			<a class="left carousel-control" href="#myCarou" role="button" data-slide="prev">
+    			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    			<span class="sr-only">Previous</span>
+  			</a>
+  			<a class="right carousel-control" href="#myCarou" role="button" data-slide="next">
+    			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    			<span class="sr-only">Next</span>
+  			</a>
+		</div>
+			<div class="row">
+  				<div class="col-md-6 col-md-offset-3">
+				<p id="fourth">
+					The Food Bank for New York City is a nonprofit organization that works to provide the poor New York City residence with food and drinks. Over the years, it has received numerous awards and got national recognition when it was listed under "200 Largest U.S. Charities for 2011" in the Forbes magazine. Teens can easily volunteer in the organization's Warehouse Repack Program, the kitchen, and the food storage section.
+				</p>
+				<p id="numberfour">
+					<ul class="additional-info">
+  						<li class="addtional-info-item">WHEN: DEPENDING ON TYPE OF VOLUNTEERING JOB</li>
+  						<li class="addtional-info-item">WHERE: 39 Broadway New York, NY 10006</li>
+ 						<li class="addtional-info-item">CONTACT: (212) 566-7855</li>
+					</ul>
+					For more information, check out Food Bank for New York City's website: 
+					<a href="http://www.foodbanknyc.org/" target="_blank"/>HERE!</a>
+				</p>
+				</div>
+			</div>
+			<div class="row">
+  				<div class="col-md-6 col-md-offset-3">
+			<h1>myFace</h1>
+				</div>
+			</div>
+			<div id="my" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+    				<li data-target="#my" data-slide-to="0" class="active"></li>
+    				<li data-target="#my" data-slide-to="1"></li>
+    				<li data-target="#my" data-slide-to="2"></li>
+ 				</ol>
+ 				<div class="carousel-inner" role="listbox">
+    				<div class="item active">
+     					<img src="m1.jpg" alt="Races For Faces" style="width:1130px;height:360px;">
+     					<div class="carousel-caption">
+     					<h3>Races For Faces</h3>
+     					<p>A race event held by myFace to increase awareness and raise money for facial deconformities</p>
+     				</div>
+   				 </div>
+
+    			<div class="item">
+						<img src="m2.jpg" alt="The Wonder of myFace" style="width:1130px;height:360px;">
+						<div class="carousel-caption">
+							<h3>The Wonder of myFace: Gala 2016</h3>
+							<p>A family at the Gala 2016 myFace event</p>
+						</div>
+    			</div>
+
+    			<div class="item">
+      					<img src="m3.jpg" alt="myFace Party" style="width:1130px;height:360px;">
+      					<div class="carousel-caption">
+      						<h3>myFace Christmas Party</h3>
+      						<p>Adults, teens, and a child enjoying their time at the Christmas Party</p>
+      					</div>
+    			</div>
+  			</div>
+  			<a class="left carousel-control" href="#my" role="button" data-slide="prev">
+    			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    			<span class="sr-only">Previous</span>
+  			</a>
+  			<a class="right carousel-control" href="#my" role="button" data-slide="next">
+    			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    			<span class="sr-only">Next</span>
+  			</a>
+		</div>
+			<div class="row">
+  				<div class="col-md-6 col-md-offset-3">
+				<p id="fifth">
+					myFace is an organization that reforms the faces of people born with facial deconformity. Teens can volunteer there by working at their office.
+				</p> 
+				<p id="numberfive">
+					<ul class="additional-info">
+  						<li class="addtional-info-item">WHEN: Mon Aug 15, 2016 10:00 AM to Thu Dec 15, 2016 02:00 PM</li>
+  						<li class="addtional-info-item">WHERE: 333 E. 30th St., Lobby Office New York, NY10016</li>
+ 						<li class="addtional-info-item">CONTACT: (212) 263-6656</li>
+					</ul> 
+					For more information, check out Food Bank for myFace's website: 
+					<a href="https://www.myface.org/" target="_blank"/>HERE!</a>
+				</p>
+				</div>
+			</div>
 
 
 

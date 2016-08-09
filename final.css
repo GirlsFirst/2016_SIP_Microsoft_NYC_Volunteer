@@ -10,15 +10,26 @@ body{
 	
 
 }
+img { 
+	border: 10px solid black;
+    padding: 2px;
+ }
+
 
 .body{
 	width:900px;
 	text-align: center;
 
 
+}
+h2{
+	align-content: center;
+	text-align: center;
+	color: purple;
+	font-size:150%;
+	width:900px;
 
 }
-
 
 #home{
 	color: hotpink;
