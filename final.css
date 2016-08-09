@@ -3,13 +3,19 @@ body{
 	background-repeat: repeat-y;
 	align-content: center;
 	text-align: center;
+	color: purple;
+	font-size:190%;
+
+	
 	
 
 }
 
 .body{
-	width:950px;
+	width:900px;
 	text-align: center;
+
+
 
 }
 
