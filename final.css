@@ -1,0 +1,20 @@
+body{
+	background-image: url('bg.jpg');
+	background-repeat: repeat;
+	text-align:center;
+
+}
+
+h1{
+	color: darkblue;
+	text-align: center;
+}
+
+
+
+.container-fluid {
+    width: 1000px;
+  margin: 0 auto; 
+}
+
+
