@@ -1,12 +1,21 @@
 body{
-	background-image: url('bg.jpg');
+	background-image: url("bg.jpg");
 	background-repeat: repeat;
-	text-align:center;
+	align-content: center:;
+	text-align: center;
+	
 
 }
 
-h1{
-	color: darkblue;
+.body{
+	width:950px;
+	text-align: center;
+
+}
+
+
+#home{
+	color: pink;
 	text-align: center;
 }
 
@@ -18,3 +27,15 @@ h1{
 }
 
 
+
+.navbar{
+	background-color: black;
+	width:950px;
+	color: pink;
+	text-align: center;
+	align-content: center;
+}
+
+a{
+	color:pink;
+}
