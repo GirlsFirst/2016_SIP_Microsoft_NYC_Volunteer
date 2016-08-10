@@ -7,9 +7,13 @@ body{
 	font-size:190%;
 
 	
-	
-
+}	
+ul {
+    list-style-type: none;
+    color: #A569BD;
 }
+
+
 img { 
 	border: 10px solid black;
     padding: 2px;
@@ -17,8 +21,9 @@ img {
 
 
 .body{
-	width:900px;
+	width:800px;
 	text-align: center;
+	align-content: center;
 
 
 }
