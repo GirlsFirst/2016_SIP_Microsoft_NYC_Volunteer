@@ -12,21 +12,21 @@ function callback(data){
     for (var i = 0; i < cells.length; i++){
         var rowObj = {};
         rowObj[i] = cells[i].title.$t;
-        
         var rowCols = cells[i].content.$t.split(',');
         for (var j = 0; j < rowCols.length; j++){
             var keyVal = rowCols[j].split(':');
             rowObj[keyVal[0].trim()] = keyVal[1];
-
 
         }
         rows.push(rowObj);
 
     }
     
-    var raw = document.createElement('p');
+    var raw = document.createElement('br');
+    var raw2 = document.createElement('p');
     raw.innerText = JSON.stringify(rows);
     document.body.appendChild(raw);
+    document.body.appendChild(raw2);
 }
 
 $(document).ready(function(){
@@ -40,6 +40,8 @@ $(document).ready(function(){
 
 
 });
+
+
 </script>
 </head>
 <body>
