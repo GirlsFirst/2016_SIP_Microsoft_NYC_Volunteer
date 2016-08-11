@@ -50,7 +50,7 @@ function goBack() {
 <!--end of bar-->
 
 <!--PUT TEXT HERE-->
-    <h1>
+<h1>
       Need Volunteers?
     </h1>
     <h2>  
@@ -102,15 +102,46 @@ function goBack() {
     <label>
       <input type="checkbox" name="name"> Medical
     </label>
-    
-   <div class="checkbox"> 
-   <label>
+  <div class ="checkbox">
+    <label>
       <input type="checkbox" name="name"> Food
     </label>
   </div>
-   <input type="submit" name = "name" value="Submit">
+  <div class="checkbox"> 
+    <label>
+      <input type="checkbox" id= 
+      "porfavor" name="name"  onclick="checkers()"> Other
+    </label>
+  </div>
+    <textarea class="form-control" style= "width:300px" name="name" id="please" rows="3">Description</textarea>
+
+  <input type="submit" name = "name" value="Submit">
 </form>
-    </div>
+    
+  </body>
+  <script>
+ 
+  function pleasehide(){
+    var des = document.getElementById("please");
+    console.log(des.innerHTML);
+    des.style.display ='none';
+  }
+
+  pleasehide();
+
+  function checkers(){
+    if (document.getElementById("porfavor").checked){
+      var des = document.getElementById("please");
+      des.style.display ='block';
+    }
+    else {
+      des.style.display ='none';
+    }
+
+
+  }
+</script>
+
 
 
 <!--End of the text-->
