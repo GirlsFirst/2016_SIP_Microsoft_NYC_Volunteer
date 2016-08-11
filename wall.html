@@ -12,18 +12,23 @@ $(document).ready(function(){
     $.getJSON(JSONURL, function(data){
 	  	console.log("Done!");
       jsondata = data;
-      var mydiv = document.getElementById('place');
-      var places = " "
-      for(var i = 0; i < jsondata.feed.entry.length; i++){
-        places += jsondata.feed.entry[i].title.$t;
+      var mydiv = $("#place").html();
+      var places = "";
+	  console.log(jsondata.feed.entry.length);
+	  
+     	 for(var i = 0; i < jsondata.feed.entry.length; i++){
+	 	 console.log(i);
+      	 places += jsondata.feed.entry[i].title.$t + "<br />";
       }
-      mydiv.innerHTML = places;
-     
       
+  	
+      $("#place").html(places);
+	  console.log($("#place").html());
 
 
-      
     });
+
+
 });
 
  
@@ -34,11 +39,7 @@ $(document).ready(function(){
 	Row Data: <br/>
   
   <div id="place">
-  <br>
   </div>
 </body>
 
 </html>
-
-
-
