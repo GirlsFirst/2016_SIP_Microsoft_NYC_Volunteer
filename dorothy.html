@@ -42,20 +42,12 @@ function goBack() {
       <a class="navbar-brand" href="#">Volunteen</a>
     </div>
     <center>
-     <ul class="nav navbar-nav">
-       <li class="active"><a href="file:///C:/Users/Girls%20Who%20Code/2016_SIP_Microsoft_NYC_Volunteer/homepage.html">Home</a></li>
+    <ul class="nav navbar-nav">
+      <li><a href="file:///C:/Users/Girls%20Who%20Code/2016_SIP_Microsoft_NYC_Volunteer/homepage.html">Home</a></li>
       <li><a href="file:///C:/Users/Girls%20Who%20Code/2016_SIP_Microsoft_NYC_Volunteer/map.html">Find Volunteer Jobs</a></li>
-      <li><a href="file:///C:/Users/Girls%20Who%20Code/2016_SIP_Microsoft_NYC_Volunteer/formpage.html">Add your volunteer job to our map</a></li> 
-      <li><a href="file:///C:/Users/Girls%20Who%20Code/2016_SIP_Microsoft_NYC_Volunteer/description.html">Description</a></li> 
-      <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="environmental.html">Environmental</a></li>
-            <li><a href="Animals.html">Animal</a></li>
-            <li><a href="medical.html">Medical</a></li>
-            <li><a href="food.html">Food Pantry</a></li>
-            <li><a href="other.html">Other</a></li>
-
+      <li><a href="file:///C:/Users/Girls%20Who%20Code/2016_SIP_Microsoft_NYC_Volunteer/formpage.html">Add your volunteer job to our map</a></li>
+      <li><a href="file:///C:/Users/Girls%20Who%20Code/2016_SIP_Microsoft_NYC_Volunteer/description.html">Description</a></li>
+      <li><a onclick="goBack()">Back</a></li>
     </ul>
   </div>
 </nav>
@@ -79,11 +71,14 @@ function goBack() {
     var pleaseWork = [];         
        
  
- 
      
-    var places;
+     
+     
+     
+     
+    var volunteerplaces;
     $.getJSON(JSONURL, function(data){
-        places = data;
+        volunteerplaces = data;
  
     });
  
@@ -99,49 +94,38 @@ function goBack() {
         });
             
 
-      }    
-    var markers = [];
-     
-    var infowindows = []; 
-
-    var infowindow = new google.maps.InfoWindow();      
-
-    $.getJSON(JSONURL, function(data){
-      
-      for(var i = 0; i < places.feed.entry.length; i++){
-        infowindows[i] = places.feed.entry[i].content.$t.toString();
-   
-        // location parsing
-        var array = places.feed.entry[i].content.$t.split(",");
-
-        var latitude = array[0].split(" "); //array latitude[1] is the number
-
-        var longitude = array[1].split(" "); //array longitude[1] is the number
-
-        //position gotta convert to float to work
-        var pos = {lat: parseFloat(latitude[1]), lng: parseFloat(longitude[2])};
  
+ 
+            $.getJSON(JSONURL, function(data){
 
-        var marker = new google.maps.Marker({
-          position: pos,
-          map: map,
-          title: infowindows[i];
-          
-        });
+              for(var i = 0; i < data.feed.entry.length; i++){
+                
+                pleaseWork.push(data.feed.entry[i].title.$t);
+                var array = data.feed.entry[i].content.$t.split(",");
+ 
+                var latitude = array[0].split(" "); //array latitude[1] is the number
+ 
+                var longitude = array[1].split(" "); //array longitude[1] is the number
+ 
+                //position gotta convert to float to work
+                var pos = {lat: parseFloat(latitude[1]), lng: parseFloat(longitude[2])};
+         
+                var marker = new google.maps.Marker({
+                  position: pos,
+                  map: map,
+                  title: data.feed.entry[i].title.$t //marker from json
+                });
+ 
+                var contentString =  'location: ' + pleaseWork[i];
 
-        google.maps.event.addListener(marker, 'click', (function(marker, i){
-          return function(){
-            infowindow.setContent(infowindows[i]);
-            infowindow.open(map, marker);
-          }
-        })(marker, i));
-
-        
-
-      
-        markers.push(marker);
-
-       
+                var infowindow = new google.maps.InfoWindow({
+                content: contentString // FIZ THIS
+                });
+ 
+                 marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                    infowindow.setPosition(pos)
+                  });  
          
          //Array separtes the items by , 
          /*var array = data.feed.entry[i].content.$t.split(",");
