@@ -62,13 +62,12 @@ function goBack() {
  
     <div id="places"></div>
  
-   
- 
+
      <script type="text/javascript">
      
      var JSONURL = 'https://spreadsheets.google.com/feeds/list/1yUkYl1H2imvxxyDTPTAz5bkauHQC-Ch5BaWUuYw2vV8/1/public/basic?alt=json';
  
-           
+        var list = []; 
        
  
      
@@ -93,7 +92,7 @@ function goBack() {
  
         });
  
-            var contentString = 'New York Cares </br> 214 W. 29th St. </br> New York, NY 10001 </br> (212)-228-5000 </br> <a href="http://www.nycares.org">nycares.org</a>'
+            //var contentString = 'New York Cares </br> 214 W. 29th St. </br> New York, NY 10001 </br> (212)-228-5000 </br> <a href="http://www.nycares.org">nycares.org</a>'
  
  
             $.getJSON(JSONURL, function(data){
@@ -107,20 +106,24 @@ function goBack() {
  
                 //position gotta convert to float to work
                 var pos = {lat: parseFloat(latitude[1]), lng: parseFloat(longitude[2])};
+                  list.push(pos)
+
          
                 var marker = new google.maps.Marker({
                   position: pos,
                   map: map,
-                  title: data.feed.entry[i].title.$t //marker from json
+                  title: data.feed.entry[i].title.$t
+                   //marker from json
                 });
  
                 var infowindow = new google.maps.InfoWindow({
-                content: contentString // FIZ THIS
+                content: list // FIx THIS
                 });
  
-                 marker.addListener('click', function() {
+                 var m = marker.addListener('click', function() {
                     infowindow.open(map, marker);
                   });  
+                 
          
          //Array separtes the items by , 
          /*var array = data.feed.entry[i].content.$t.split(",");
