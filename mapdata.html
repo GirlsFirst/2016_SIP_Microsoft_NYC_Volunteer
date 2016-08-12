@@ -68,19 +68,23 @@ function goBack() {
      
      var JSONURL = 'https://spreadsheets.google.com/feeds/list/1yUkYl1H2imvxxyDTPTAz5bkauHQC-Ch5BaWUuYw2vV8/1/public/basic?alt=json';
  
-           
-       
- 
-     
-     
-     
-     
+  
      
     var volunteerplaces;
     $.getJSON('volunteerdata.json', function(data){
         volunteerplaces = data;
  
     });
+
+    function getInfoCallback(map, content){
+      var infowindow= new google.maps.InfoWindow({
+        content: content
+      });
+       return function (){
+        infowindow.setContent(content);
+        infowindow.open(map, this);
+       };
+    }
  
  
       function initMap(){
@@ -92,9 +96,7 @@ function goBack() {
               zoom: 8
  
         });
- 
-            var contentString = 'New York Cares </br> 214 W. 29th St. </br> New York, NY 10001 </br> (212)-228-5000 </br> <a href="http://www.nycares.org">nycares.org</a>'
- 
+  
  
             $.getJSON(JSONURL, function(data){
               for(var i = 0; i < data.feed.entry.length; i++){
@@ -107,20 +109,18 @@ function goBack() {
  
                 //position gotta convert to float to work
                 var pos = {lat: parseFloat(latitude[1]), lng: parseFloat(longitude[2])};
-         
+                
+                var infowindow = new google.maps.InfoWindow({
+                content: contentString // FIZ THIS
+                });
                 var marker = new google.maps.Marker({
                   position: pos,
                   map: map,
                   title: data.feed.entry[i].title.$t //marker from json
                 });
+
+                var contentString = '<div id = "content">' + '<div id = "siteNotice">' + '</div>' 
  
-                var infowindow = new google.maps.InfoWindow({
-                content: contentString // FIZ THIS
-                });
- 
-                 marker.addListener('click', function() {
-                    infowindow.open(map, marker);
-                  });  
          
          //Array separtes the items by , 
          /*var array = data.feed.entry[i].content.$t.split(",");
