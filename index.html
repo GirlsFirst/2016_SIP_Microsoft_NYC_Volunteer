@@ -14,6 +14,15 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/final.css">
 
+  <!-- Load c3.css -->
+<link href="styles/c3.css" rel="stylesheet" type="text/css">
+
+<!-- Load d3.js and c3.js -->
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="scripts/c3.js"></script>
+
+
+
 <script>
 function goBack() {
     window.history.back();
@@ -66,6 +75,84 @@ This is where teens can come to look for volunteer opportunities and where compa
 
 <img id="homeimage" src="assets/homepg.jpg" class="img-rounded" alt="Volunteering" width="30%">
 
+
+<h3> Amount of Hours Volunteering</br>
+    Contributed by Adults and Teens </h3>
+
+<div id="chart"></div>
+
+<script>
+
+
+
+var chart = c3.generate({
+    data: {
+       
+        columns: [
+            
+
+            ['Teens', 29],
+
+            ['Adults', 52],
+        ],
+     
+        type: 'bar',
+
+        colors: {
+            Teens: '#FF1493',
+            Adult: '#9400D3'
+           
+        },
+        color: function (color, d) {
+            // d will be 'id' when called for legends
+            return d.id && d.id === 'Adults' ? d3.rgb(color).darker(d.value / 150) : color;
+        }
+    
+
+    },
+    bar: {
+        width: {
+            ratio: 0.3 
+        },
+
+        
+    },
+
+    axis: {
+        y: {
+            label: {
+                text: 'Amount of Hours Contributed',
+                position: 'outer-middle'
+                
+
+              
+                   }
+
+        
+
+          },
+        x: {
+            type: 'category',
+              categories: [' ']
+          } 
+        }
+
+    
+
+
+  
+});
+</script>
+
+<p>
+Youth contribute more than </br>
+1.3 billion hours of community</br>
+service each year.</br>
+• The typical youth volunteer</br>
+contributes 29 hours per year,</br>
+while adult volunteers typically</br>
+serve 52 hours per year.
+</p>
 
 
 
