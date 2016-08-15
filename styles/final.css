@@ -1,5 +1,5 @@
 body{
-	background-image: url("bg.jpg");
+	background-image: url("../assets/bg.jpg");
 	background-repeat: repeat-y;
 	align-content: center;
 	text-align: center;
@@ -41,9 +41,7 @@ h2{
 	color: hotpink;
 	border: 10px solid transparent;
     padding: 15px;
-    -webkit-border-image: url(border.png) 30 stretch; /* Safari 3.1-5 */
-    -o-border-image: url(border.png) 30 stretch; /* Opera 11-12.1 */
-    border-image: url(border.png) 30 stretch;
+   
 }
 
 #homeimage{

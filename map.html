@@ -12,7 +12,7 @@
  
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="final.css">
+  <link rel="stylesheet" type="text/css" href="styles/final.css">
   <style>
     #map{
   width:100%;
@@ -25,7 +25,7 @@ function goBack() {
 }
 </script>
  
-<script src="final.js"></script>
+<script src="scripts/final.js"></script>
  
 <title>Volunteen - Find a Volunteer Job</title>
     </head>
@@ -33,7 +33,7 @@ function goBack() {
         <body>
 <h1 id="home">Find Places to Volunteer</h1>
 <center>
-<img src="head2.png" height="60%">
+<img src="assets/head2.png" height="60%">
     <!--Navigation bar-->
 <center>   
 <nav class="navbar">
@@ -42,11 +42,11 @@ function goBack() {
       <a class="navbar-brand" href="#">Volunteen</a>
     </div>
     <center>
-     <ul class="nav navbar-nav">
-       <li class="active"><a href="file:///C:/Users/Girls%20Who%20Code/2016_SIP_Microsoft_NYC_Volunteer/homepage.html">Home</a></li>
-      <li><a href="file:///C:/Users/Girls%20Who%20Code/2016_SIP_Microsoft_NYC_Volunteer/map.html">Find Volunteer Jobs</a></li>
-      <li><a href="file:///C:/Users/Girls%20Who%20Code/2016_SIP_Microsoft_NYC_Volunteer/formpage.html">Add your volunteer job to our map</a></li> 
-      <li><a href="file:///C:/Users/Girls%20Who%20Code/2016_SIP_Microsoft_NYC_Volunteer/description.html">Description</a></li> 
+   <ul class="nav navbar-nav">
+       <li class="active"><a href="homepage.html">Home</a></li>
+      <li><a href="map.html">Find Volunteer Jobs</a></li>
+      <li><a href="formpage.html">Add your volunteer job to our map</a></li> 
+      <li><a href="description.html">Description</a></li> 
       <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -59,8 +59,7 @@ function goBack() {
     </ul>
   </div>
 </nav>
- 
- 
+
 <!--end of bar-->
 <div class="body">
  
@@ -79,97 +78,69 @@ function goBack() {
     var pleaseWork = [];         
        
  
- 
      
-    var places;
+     
+     
+     
+     
+    var volunteerplaces;
     $.getJSON(JSONURL, function(data){
-        places = data;
+        volunteerplaces = data;
  
     });
- 
- 
-      function initMap(){
-           var mylatlng = {lat:40.7481, lng:-73.9938};          
-         
-        var mapDiv = document.getElementById('map');
-            var map = new google.maps.Map(mapDiv,{
-              center: mylatlng,
-              zoom: 8
- 
-        });
-            
+    
+    var infocontent = [];
+    var markers= [];
 
-      }    
-    var markers = [];
-     
-    var infowindows = []; 
-
-    var infowindow = new google.maps.InfoWindow();      
-
-    $.getJSON(JSONURL, function(data){
-      
-      for(var i = 0; i < places.feed.entry.length; i++){
-        infowindows[i] = places.feed.entry[i].content.$t.toString();
-   
-        // location parsing
-        var array = places.feed.entry[i].content.$t.split(",");
-
-        var latitude = array[0].split(" "); //array latitude[1] is the number
-
-        var longitude = array[1].split(" "); //array longitude[1] is the number
-
-        //position gotta convert to float to work
-        var pos = {lat: parseFloat(latitude[1]), lng: parseFloat(longitude[2])};
- 
-
-        var marker = new google.maps.Marker({
-          position: pos,
-          map: map,
-          title: infowindows[i];
-          
-        });
-
-        google.maps.event.addListener(marker, 'click', (function(marker, i){
-          return function(){
-            infowindow.setContent(infowindows[i]);
-            infowindow.open(map, marker);
-          }
-        })(marker, i));
-
-        
-
-      
-        markers.push(marker);
-
+    function initMap(){
+      var mylatlng = {lat:40.7481, lng:-73.9938};          
        
-         
-         //Array separtes the items by , 
-         /*var array = data.feed.entry[i].content.$t.split(",");
-         console.log("#"+i+" Array content:");
-         console.log(array);
-         
-         var local = data.feed.entry[i].title.$t; //Variável onde fica armazenada o nome do local
-         console.log("#"+i+" Variavel local: "+local);
-         
-         var lat = array[0].split(" "); //Array que recebe o trecho de latitude do content, sendo que lat[1] é a latitude em números
-         console.log("#"+i+" Array lat:");
-         console.log(lat);
-         console.log("#"+i+" Latitude (lat[1]) : "+lat[1]);
-         
-         var longi = array[1].split(" "); //Array que recebe o trecho de longitude do content, sendo que longi[2] é a longitude em números
-         console.log("#"+i+" Array longi:");
-         console.log(longi);
-         console.log("#"+i+" Latitude (longi[2]) : "+lat);
-         
-         places += "<strong>Local:</strong> "+ local + "<br /><strong>Latitude:</strong> " + lat[1] + "<br /><strong>Longitude:</strong> "+ longi[2] + "<br /><br />";
-         
-         console.log("------------------------------------------------------------------------------------------------------------------------------------------------------------------");*/
-      }
-    });
- 
- 
-      }
+      var mapDiv = document.getElementById('map');
+          var map = new google.maps.Map(mapDiv,{
+            center: mylatlng,
+            zoom: 8
+
+      });
+
+
+      $.getJSON(JSONURL, function(data){
+        for(var i = 0; i < data.feed.entry.length; i++){
+          
+          infocontent.push(data.feed.entry[i].title.$t);
+          var array = data.feed.entry[i].content.$t.split(",");
+
+          var latitude = array[0].split(" "); //array latitude[1] is the number
+
+          var longitude = array[1].split(" "); //array longitude[1] is the number
+
+          //position gotta convert to float to work
+          var pos = {lat: parseFloat(latitude[1]), lng: parseFloat(longitude[2])};
    
+          var marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            title: data.feed.entry[i].title.$t //marker from json
+          });
+
+          markers.push(marker);
+         
+          var infowindow = new google.maps.InfoWindow();
+
+          marker.addListener('click', function() {
+            console.log(infocontent[i]);
+            console.log(i);
+
+              infowindow.setOptions({
+                content: infocontent[i]
+              });
+              infowindow.open(map, marker);
+              infowindow.setPosition(pos)
+          });  
+
+        }
+      });
+    }
+ 
  
  
  
