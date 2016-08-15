@@ -98,7 +98,7 @@ function goBack() {
       var mapDiv = document.getElementById('map');
           var map = new google.maps.Map(mapDiv,{
             center: mylatlng,
-            zoom: 12
+            zoom: 11
 
       });
 
@@ -124,18 +124,7 @@ function goBack() {
 
           markers.push(marker);
          
-          var infowindow = new google.maps.InfoWindow();
-
-          marker.addListener('click', function() {
-            console.log(infocontent[i]);
-            console.log(i);
-
-              infowindow.setOptions({
-                content: infocontent[i]
-              });
-              infowindow.open(map, marker);
-              infowindow.setPosition(pos)
-          });  
+            
 
         }
       });
