@@ -37,13 +37,14 @@ function goBack() {
     </div>
     <center>
    <ul class="nav navbar-nav">
-       <li class="active"><a href="index.html">Home</a></li>
+       <li class="active"><a href="homepage.html">Home</a></li>
       <li><a href="map.html">Find Volunteer Jobs</a></li>
       <li><a href="formpage.html">Add your volunteer job to our map</a></li> 
       <li><a href="description.html">Description</a></li> 
       <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li><a href="quiz.html">Take a quiz!</a></li>
             <li><a href="environmental.html">Environmental</a></li>
             <li><a href="Animals.html">Animal</a></li>
             <li><a href="medical.html">Medical</a></li>
@@ -65,11 +66,11 @@ function goBack() {
        Submit a form to our site and watch the volunteers come rolling in.
     </h2>  
     <div class="container">
-      <form action="https://formspree.io/tjinthemix@aol.com" method="POST">    
-  <label for="InputCompanyName3">Company Name</label>
+      <form action="https://formspree.io/gwcvolunteenproject@gmail.com" method="POST">    
+  <label for="InputCompanyName3">Company/Organization Name</label>
       
 
-  <input type="text" name="name"class="form-control" style= "width:300px" id="InputCompany3" placeholder="Company">
+  <input type="text" name="name"class="form-control" style= "width:300px" id="InputCompany3" placeholder="Company/OrganizationName">
 
   </div>
   <div class="form-group">
@@ -91,12 +92,10 @@ function goBack() {
     <input type="text" name="name" class="form-control" style= "width:300px" id="InputJob3" placeholder="Job">
   </div>
   <textarea class="form-control" style= "width:300px" name="name" rows="3">Description</textarea>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox" name="name"> Elderly Care
-    </label>
-  </div>
     <div class="checkbox">
+      <p>
+        Select 1 Category
+       </p> 
     <label>
       <input type="checkbox" name="name"> Animals
     </label>
@@ -138,7 +137,7 @@ function goBack() {
   pleasehide();
 
   function checkers(){
-    if (document.getElementById("porfavor").checked){
+    if (document.getElementById("porfavor")){
       var des = document.getElementById("please");
       des.style.display ='block';
     }
@@ -146,8 +145,9 @@ function goBack() {
       des.style.display ='none';
     }
 
-
+    checker();
   }
+</script>
 </script>
 
 

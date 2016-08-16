@@ -1,306 +1,366 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<!-- Latest compiled and minified CSS -->
-		
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-		<!-- Latest compiled JavaScript -->
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-		<script type="text/javascript">
-    		$(document).ready(function() {
-        		$("button").click(function(){
-            		var life = [];
-            		$.each($("input[name='Environmental']:checked"), function(){ 
-            		});
-            		$.each($("input[name='Animal']:checked"), function(){
-            		}); 
-            		$.each($("input[name='Food']:checked"), function(){
-            		});            
-            		$.each($("input[name='Elderly']:checked"), function(){
-            		}); 
-            		$.each($("input[name='Medical']:checked"), function(){ 
-                		life.push($(this).val());
-            		});
-        		});
-    		});
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/final.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("button").click(function(){
+                    var life = [];
+                    $.each($("input[name='Environmental']:checked"), function(){
+                    });
+                    $.each($("input[name='Animal']:checked"), function(){
+                    });
+                    $.each($("input[name='Food']:checked"), function(){
+                    });            
+                    $.each($("input[name='Medical']:checked"), function(){
+                        life.push($(this).val());
+                    });
+                });
+            });
 </script>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+<script src="scripts/final.js"></script>
+<title>Volunteen</title>
 	</head>
-<body>
-	<h1>Volunteen Quizzz</h1>
+
+		<body>
+<h1 id="home">Volunteen</h1>
+<center>
+<img src="assets/head2.png" height="60%">
+	<!--Navigation bar-->
+	
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Volunteen</a>
+    </div>
+    <center>
+   <ul class="nav navbar-nav">
+       <li class="active"><a href="homepage.html">Home</a></li>
+      <li><a href="map.html">Find Volunteer Jobs</a></li>
+      <li><a href="formpage.html">Add your volunteer job to our map</a></li> 
+      <li><a href="description.html">Description</a></li> 
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="quiz.html">Take a quiz!</a></li>
+            <li><a href="environmental.html">Environmental</a></li>
+            <li><a href="Animals.html">Animal</a></li>
+            <li><a href="medical.html">Medical</a></li>
+            <li><a href="food.html">Food Pantry</a></li>
+            <li><a href="other.html">Other</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+
+<!--end of bar-->
+
+<!--Text goes here-->
+
+<h1>Volunteen Quizzz</h1>
 <div class="container">
 
-		<h1>
-			Take a quiz now to find the best volunteering job for you!
-		</h1>
-		<fieldset id="question1">
-			<legend>Where would you love to spend your free time at?</legend>
+<h1>
+Take a quiz now to find the best volunteering job for you!
+</h1>
+<fieldset id="question1">
+<legend>Where would you love to spend your free time at?</legend>
 
-		<div id="checkboxe1">
-			<label>
-			<input type="checkbox" id="checkboxes1" name="Environmental">Park
-			</label>
-		</div>
-		<div id="checkboxes2">
-			<label>
-			<input type="checkbox" name="Animal">Zoo
-			</label>
-		</div>
-		<div class="checkboxes3">
-			<label>
-			<input type="checkbox" name="Food">Restaurant
-			</label>
-		</div>
-		<div class="checkboxes4">
-			<label>
-			<input type="checkbox" name="Elderly">Grandma's House
-			</label>
-		</div>
-		<div class="checkboxes5">
-			<label>
-			<input type="checkbox" name="Medical">Doctor's Office
-			</label>
-		</div>
-	</fieldset>
-		
+<div>
+<label>
+<input type="checkbox" id="checkboxes1" name="Environmental">Park
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes2" name="Animal">Zoo
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes3" name="Food">Restaurant
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes4" name="Medical">Doctor's Office
+</label>
+</div>
+</fieldset>
 
-		<fieldset id="question2">
-			<legend>Who would you like to hang out with for a day?</legend>
-			<div id="checkboxe6">			
-				<label>
-				<input type="checkbox" id="checkboxes6" name="Environmental">Park Reservationist
-				</label>
-			</div>
-			<div class="checkboxes7">
-				<label>
-				<input type="checkbox" name="Animal">Veterinarian
-				</label>
-			</div>
-			<div class="checkboxes8">
-				<label>
-				<input type="checkbox" name="Food">Chef
-				</label>
-			</div>
-			<div class="checkboxes9">
-				<label>
-				<input type="checkbox" name="Elderly">Grandpa
-				</label>
-			</div>
-			<div class="checkboxes10">
-				<label>
-				<input type="checkbox" name="Medical">Doctor
-				</label>
-			</div>
-		</fieldset>
+<fieldset id="question2">
+<legend>Who would you like to hang out with for a day?</legend>
+<div> 
+<label>
+<input type="checkbox" id="checkboxes5" name="Environmental">Park Reservationist
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes6" name="Animal">Veterinarian
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes7" name="Food">Chef
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes8" name="Medical">Doctor
+</label>
+</div>
+</fieldset>
 
-		<fieldset id="question3">
-			<legend>Which book(s) would you like to read based on the title?</legend>
-		<div class="checkboxe11"
-			<label>
-			<input type="checkbox" id="checkboxes11" name="Environmental">The End of Nature
-			</label>
-		</div>
-		<div class="checkboxes12">
-			<label>
-			<input type="checkbox" name="Animal">Animal Farm
-			</label>
-		</div>
-		<div class="checkboxes13">
-			<label>
-			<input type="checkbox" name="Food">In Defense of Food: An Eater's Manifesto
-			</label>
-		</div>
-		<div class="checkboxes14"
-			<label>
-			<input type="checkbox" name="Elderly">Aging and Old Age
-			</label>
-		</div>
-		<div class="checkboxes15">
-			<label>
-			<input type="checkbox" name="Medical">Gray's Anatomy
-			</label>
-		</div>
-		</fieldset>
+<fieldset id="question3">
+<legend>Which book(s) would you like to read based on the title?</legend>
+<div>
+<label>
+<input type="checkbox" id="checkboxes9" name="Environmental">The End of Nature
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes10" name="Animal">Animal Farm
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes11" name="Food">In Defense of Food: An Eater's Manifesto
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes12" name="Medical">Gray's Anatomy
+</label>
+</div>
+</fieldset>
 
-		<fieldset id="question4">
-			<legend>What type of book bag design would you like the best?</legend>
-				<div class="checkboxe16">
-					<label>
-					<input type="checkbox" id="checkboxes16" name="Environmental">Natural Beauty of Parks
-					</label>
-				</div>
-				<div class="checkboxes17">
-					<label>
-					<input type="checkbox" name="Animal">Animal Design
-					</label>
-				</div>
-				<div class="checkboxes18">
-					<label>
-					<input type="checkbox" name="Food">Food
-					</label>
-				</div>
-				<div class="checkboxes19">
-					<label>
-					<input type="checkbox" name="Elderly">Twilight: Vampire Edward and Old Bella
-					</label>
-				</div>
-				<div class="checkboxes20">
-					<label>
-					<input type="checkbox" name="Medical">Medical Equipments
-					</label>
-				</div>
-		</fieldset>
+<fieldset id="question4">
+<legend>What type of book bag design would you like the best?</legend>
+<div>
+<label>
+<input type="checkbox" id="checkboxes13" name="Environmental">Natural Beauty of Parks
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes14" name="Animal">Animal Design
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes15" name="Food">Food
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes16" name="Medical">Medical Equipments
+</label>
+</div>
+</fieldset>
 
-		<fieldset id="question5">
-			<legend>Who would you dress up as for Halloween?</legend>
-				<div class="checkboxe21">
-					<label>
-					<input type="checkbox" id="checkboxes21" name="Environmental">Mother Nature
-					</label>
-				</div>
-				<div class="checkboxes22">
-					<label>
-					<input type="checkbox" name="Animal">Tiger
-					</label>
-				</div>
-				<div class="checkboxes23">
-					<label>
-					<input type="checkbox" name="Food">Burger
-					</label>
-				</div>
-				<div class="checkboxes24">
-					<label>
-					<input type="checkbox" name="Elderly">Old Neil Armstrong
-					</label>
-				</div>
-				<div class="checkboxe25">
-					<label>
-					<input type="checkbox" id="checkboxes25"name="Medical">Doctor
-					</label>
-				</div>
-		</fieldset>
+<fieldset id="question5">
+<legend>Who would you dress up as for Halloween?</legend>
+<div>
+<label>
+<input type="checkbox" id="checkboxes17" name="Environmental">Mother Nature
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes18" name="Animal">Tiger
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes19" name="Food">Burger
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes20"name="Medical">Doctor
+</label>
+</div>
+</fieldset>
 
-		<fieldset id="question6">
-			
-			<legend>What are you interests?</legend>
-			<div class="checkboxe26">
-				<label>
-				<input type="checkbox" id="checkboxes26" name="Environmental">Environmental
-				</label>
-			</div>
-			<div class="checkboxes27">
-				<label>
-				<input type="checkbox" name="Animal">Animal
-				</label>
-			</div>
-			<div class="checkboxes28">
-				<label>
-				<input type="checkbox" name="Food">Food
-				</label>
-			</div>
-			<div class="checkboxes29">
-				<label>
-				<input type="checkbox" name="Elderly">Elderly
-				</label>
-			</div>
-			<div class="checkboxes30">
-				<label>
-				<input type="checkbox" name="Medical">Medical
-				</label>
-			</div>
-		</fieldset>
+<fieldset id="question6">
+<legend>What are you interests?</legend>
+<div>
+<label>
+<input type="checkbox" id="checkboxes21" name="Environmental">Environmental
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes22" name="Animal">Animal
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes23" name="Food">Food
+</label>
+</div>
+<div>
+<label>
+<input type="checkbox" id="checkboxes24" name="Medical">Medical
+</label>
+</div>
+</fieldset>
 
-		<button onclick = "myFunction()">Submit</button>
+<button onclick = "myFunction()">Submit</button>
 
-
+</div>
+</body>
 <script>
 var numberofEnvironmentalChecked = 0;
 var numberofFoodChecked = 0;
 var numberofMedicalChecked = 0;
 var numberofAnimalChecked = 0;
-var numberofElderlyChecked = 0;
 
 function myFunction(){
-
 if (document.getElementById("checkboxes1").checked){
-	numberofEnvironmentalChecked++;
-	console.log(numberofEnvironmentalChecked);
+numberofEnvironmentalChecked++;
+console.log(numberofEnvironmentalChecked);
 }
-if (document.getElementById("checkboxes6").checked){
-	NumberofEnvironmentalChecked++;
-	console.log(numberofEnvironmentalChecked);
+if (document.getElementById("checkboxes5").checked){
+numberofEnvironmentalChecked++;
+console.log(numberofEnvironmentalChecked);
 }
-if (document.getElementById("checkboxes11").checked){
-	numberofEnvironmentalChecked++;
-	console.log(numberofEnvironmentalChecked);
-}
-if (document.getElementById("checkboxes16").checked){
-	numberofEnvironmentalChecked++;
-	console.log(numberofEnvironmentalChecked);
-}
-if (document.getElementById("checkboxes21").checked){
-	numberofEnvironmentalChecked++;
-	console.log(numberofEnvironmentalChecked);
-}
-if (document.getElementById("checkboxes26").checked){
-	numberofEnvironmentalChecked++;
-	console.log(numberofEnvironmentalChecked);
-}	
-
-if (document.getElementById("checkboxes3").checked){
-	numberofFoodChecked++;
-	console.log(numberofEnvironmentalChecked);
-}
-if (document.getElementById("checkboxes8").checked){
-	NumberofFoodChecked++;
-	console.log(numberofEnvironmentalChecked);
+if (document.getElementById("checkboxes9").checked){
+numberofEnvironmentalChecked++;
+console.log(numberofEnvironmentalChecked);
 }
 if (document.getElementById("checkboxes13").checked){
-	numberofFoodChecked++;
-	console.log(numberofEnvironmentalChecked);
+numberofEnvironmentalChecked++;
+console.log(numberofEnvironmentalChecked);
 }
-if (document.getElementById("checkboxes18").checked){
-	numberofFoodChecked++;
-	console.log(numberofEnvironmentalChecked);
+if (document.getElementById("checkboxes17").checked){
+numberofEnvironmentalChecked++;
+console.log(numberofEnvironmentalChecked);
+}
+if (document.getElementById("checkboxes21").checked){
+numberofEnvironmentalChecked++;
+console.log(numberofEnvironmentalChecked);
+} 
+if (document.getElementById("checkboxes3").checked){
+numberofFoodChecked++;
+console.log(numberofFoodChecked);
+}
+if (document.getElementById("checkboxes7").checked){
+numberofFoodChecked++;
+console.log(numberofFoodChecked);
+}
+if (document.getElementById("checkboxes11").checked){
+numberofFoodChecked++;
+console.log(numberofFoodChecked);
+}
+if (document.getElementById("checkboxes15").checked){
+numberofFoodChecked++;
+console.log(numberofFoodChecked);
+}
+if (document.getElementById("checkboxes19").checked){
+numberofFoodChecked++;
+console.log(numberofFoodChecked);
 }
 if (document.getElementById("checkboxes23").checked){
-	numberofFoodChecked++;
-	console.log(numberofEnvironmentalChecked);
+numberofFoodChecked++;
+console.log(numberofFoodChecked);
+} 
+if (document.getElementById("checkboxes2").checked){
+numberofAnimalChecked++;
+console.log(numberofAnimalChecked);
+} 
+if (document.getElementById("checkboxes6").checked){
+numberofAnimalChecked++;
+console.log(numberofAnimalChecked);
 }
-if (document.getElementById("checkboxes28").checked){
-	numberofFoodChecked++;
-	console.log(numberofEnvironmentalChecked);
-}	
-
-if (document.getElementById("checkboxes28").checked){
-	numberofFoodChecked++;
-	console.log(numberofEnvironmentalChecked);
-}	
-
-
-
-
+if (document.getElementById("checkboxes10").checked){
+numberofAnimalChecked++;
+console.log(numberofAnimalChecked);
+}
+if (document.getElementById("checkboxes14").checked){
+numberofAnimalChecked++;
+console.log(numberofAnimalChecked);
+}
+if (document.getElementById("checkboxes18").checked){
+numberofAnimalChecked++;
+console.log(numberofAnimalChecked);
+}
+if (document.getElementById("checkboxes22").checked){
+numberofAnimalChecked++;
+console.log(numberofAnimalChecked);
+}
+if (document.getElementById("checkboxes4").checked){
+numberofMedicalChecked++;
+console.log(numberofMedicalChecked);
+} 
+if (document.getElementById("checkboxes8").checked){
+numberofMedicalChecked++;
+console.log(numberofMedicalChecked);
+}
+if (document.getElementById("checkboxes12").checked){
+numberofMedicalChecked++;
+console.log(numberofMedicalChecked);
+}
+if (document.getElementById("checkboxes16").checked){
+numberofMedicalChecked++;
+console.log(numberofMedicalChecked);
+}
+if (document.getElementById("checkboxes20").checked){
+numberofMedicalChecked++;
+console.log(numberofMedicalChecked);
+}
+if (document.getElementById("checkboxes24").checked){
+numberofMedicalChecked++;
+console.log(numberofMedicalChecked);
+} 
 if (numberofEnvironmentalChecked >= 3) {
-		document.location.href = "https://facebook.com";
-	}
-if (numberofElderlyChecked >= 3) {
-		document.location.href = "https://buzzfeed.com";
+document.location.href = "file:///C:/Users/Girls%20Who%20Code/Downloads/environmental.html";
 }
 if (numberofFoodChecked >= 3) {
-		document.location.href = "https://buzzfeed.com";
+document.location.href = "file:///C:/Users/Girls%20Who%20Code/Downloads/food.html";
 }
 if (numberofMedicalChecked >= 3) {
-		document.location.href = "https://buzzfeed.com";
+document.location.href = "file:///C:/Users/Girls%20Who%20Code/Downloads/medical.html";
 }
 if (numberofAnimalChecked >= 3) {
-		document.location.href = "https://buzzfeed.com";
+document.location.href = "file:///C:/Users/Girls%20Who%20Code/Downloads/Animals.html";
+} else {
+document.location.href = "file:///C:/Users/Girls%20Who%20Code/Downloads/other.html";
 }
 
 }
+
 
 </script>
+
+
+
+<!--End of the text-->
+<br><br><br>
+
+
+
+
+		</body>
+</html>
