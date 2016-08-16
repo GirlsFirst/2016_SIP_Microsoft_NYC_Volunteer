@@ -225,99 +225,100 @@ if (document.getElementById("checkboxes1").checked){
 numberofEnvironmentalChecked++;
 console.log(numberofEnvironmentalChecked);
 }
-else if (document.getElementById("checkboxes5").checked){
+if (document.getElementById("checkboxes5").checked){
 numberofEnvironmentalChecked++;
 console.log(numberofEnvironmentalChecked);
 }
-else if (document.getElementById("checkboxes9").checked){
+if (document.getElementById("checkboxes9").checked){
 numberofEnvironmentalChecked++;
 console.log(numberofEnvironmentalChecked);
 }
-else if (document.getElementById("checkboxes13").checked){
+if (document.getElementById("checkboxes13").checked){
 numberofEnvironmentalChecked++;
 console.log(numberofEnvironmentalChecked);
 }
-else if (document.getElementById("checkboxes17").checked){
+if (document.getElementById("checkboxes17").checked){
 numberofEnvironmentalChecked++;
 console.log(numberofEnvironmentalChecked);
 }
-else if (document.getElementById("checkboxes21").checked){
+if (document.getElementById("checkboxes21").checked){
 numberofEnvironmentalChecked++;
 console.log(numberofEnvironmentalChecked);
 } 
-else if (document.getElementById("checkboxes3").checked){
+if (document.getElementById("checkboxes3").checked){
 numberofFoodChecked++;
 console.log(numberofFoodChecked);
 }
-else if (document.getElementById("checkboxes7").checked){
+if (document.getElementById("checkboxes7").checked){
 numberofFoodChecked++;
 console.log(numberofFoodChecked);
 }
-else if (document.getElementById("checkboxes11").checked){
+if (document.getElementById("checkboxes11").checked){
 numberofFoodChecked++;
 console.log(numberofFoodChecked);
 }
-else if (document.getElementById("checkboxes15").checked){
+if (document.getElementById("checkboxes15").checked){
 numberofFoodChecked++;
 console.log(numberofFoodChecked);
 }
-else if (document.getElementById("checkboxes19").checked){
+if (document.getElementById("checkboxes19").checked){
 numberofFoodChecked++;
 console.log(numberofFoodChecked);
 }
-else if (document.getElementById("checkboxes23").checked){
+if (document.getElementById("checkboxes23").checked){
 numberofFoodChecked++;
 console.log(numberofFoodChecked);
 } 
-else if (document.getElementById("checkboxes2").checked){
+if (document.getElementById("checkboxes2").checked){
 numberofAnimalChecked++;
 console.log(numberofAnimalChecked);
 } 
-else if (document.getElementById("checkboxes6").checked){
+if (document.getElementById("checkboxes6").checked){
 numberofAnimalChecked++;
 console.log(numberofAnimalChecked);
 }
-else if (document.getElementById("checkboxes10").checked){
+if (document.getElementById("checkboxes10").checked){
 numberofAnimalChecked++;
 console.log(numberofAnimalChecked);
 }
-else if (document.getElementById("checkboxes14").checked){
+if (document.getElementById("checkboxes14").checked){
 numberofAnimalChecked++;
 console.log(numberofAnimalChecked);
 }
-else if (document.getElementById("checkboxes18").checked){
+if (document.getElementById("checkboxes18").checked){
 numberofAnimalChecked++;
 console.log(numberofAnimalChecked);
 }
-else if (document.getElementById("checkboxes22").checked){
+if (document.getElementById("checkboxes22").checked){
 numberofAnimalChecked++;
 console.log(numberofAnimalChecked);
 }
-else if (document.getElementById("checkboxes4").checked){
+if (document.getElementById("checkboxes4").checked){
 numberofMedicalChecked++;
 console.log(numberofMedicalChecked);
 } 
-else if (document.getElementById("checkboxes8").checked){
+if (document.getElementById("checkboxes8").checked){
 numberofMedicalChecked++;
 console.log(numberofMedicalChecked);
 }
-else if (document.getElementById("checkboxes12").checked){
+if (document.getElementById("checkboxes12").checked){
 numberofMedicalChecked++;
 console.log(numberofMedicalChecked);
 }
-else if (document.getElementById("checkboxes16").checked){
+if (document.getElementById("checkboxes16").checked){
 numberofMedicalChecked++;
 console.log(numberofMedicalChecked);
 }
-else if (document.getElementById("checkboxes20").checked){
+if (document.getElementById("checkboxes20").checked){
 numberofMedicalChecked++;
 console.log(numberofMedicalChecked);
 }
-else if (document.getElementById("checkboxes24").checked){
+if (document.getElementById("checkboxes24").checked){
 numberofMedicalChecked++;
 console.log(numberofMedicalChecked);
 } 
-else if (numberofEnvironmentalChecked >= 3) {
+
+if (numberofEnvironmentalChecked >= 3) {
 document.location.href = "environmental.html";
 }
 else if (numberofFoodChecked >= 3) {
@@ -328,7 +329,8 @@ document.location.href = "medical.html";
 }
 else if (numberofAnimalChecked >= 3) {
 document.location.href = "Animals.html";
-} else {
+} 
+else {
 document.location.href = "other.html";
 }
 
